@@ -1,0 +1,52 @@
+stages:
+  - infrastructure:validate
+  - infrastructure:plan
+  - infrastructure:apply
+
+validate infrastructure:
+  stage: infrastructure:validate
+  image: 
+    name: public.ect.aws/hashicorp/terraform:1.1.5
+    entrypoint: [**]
+  only:
+    changes:
+      - infrastructure/*
+      - .gitlab-ci.yml
+  script:
+    - cd infrastructure
+    - terraform init
+    - terraform validate
+
+plan infrastructure:
+  stage: infrastructure:plan
+  image: 
+    name: public.ect.aws/hashicorp/terraform:1.1.5
+    entrypoint: [**]
+  only:
+    changes:
+      - infrastructure/*
+      - .gitlab-ci.yml
+  script:
+    - cd infrastructure
+    - terraform init
+    - terraform plan -out=tfplan
+  artifacts:
+    paths:
+      - ./infrastructure/tfplan
+
+apply infrastructure:
+  stage: infrastructure:apply
+  image: 
+    name: public.ect.aws/hashicorp/terraform:1.1.5
+    entrypoint: [**]
+  when: manual
+  dependencies:
+    - plan infrastructure
+  only:
+    changes:
+      - infrastructure/*
+      - .gitlab-ci.yml
+  script:
+    - cd infrastructure
+    - terraform init
+    - terraform apply
