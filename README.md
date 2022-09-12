@@ -73,6 +73,9 @@ Deploy your GitLab instance only when needed to reduce the costs and destroy it 
 
 So far this server is only created and doesn't include any ready to go pipelines or repos.
 
+![GitLab welcoming screen](./img/welcoming-screen.jpg)
+
+
 ## Need further support?
 
 Contact me if you need help at rojberr@outlook.com .  
