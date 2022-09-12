@@ -3,6 +3,11 @@ stages:
   - infrastructure:plan
   - infrastructure:apply
 
+cache:
+  key: prod
+  paths:
+    - ${TF_ROOT}./terraform
+    
 validate infrastructure:
   stage: infrastructure:validate
   image: 
@@ -49,4 +54,4 @@ apply infrastructure:
   script:
     - cd infrastructure
     - terraform init
-    - terraform apply
+    - terraform apply -auto-approve "tfplan"
