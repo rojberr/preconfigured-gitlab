@@ -35,7 +35,7 @@ Default output format [None]: json
 3. Execute:
 
 ```bash
-cd infrastructure
+cd infrastructure-terra
 ```
 
 ```bash
