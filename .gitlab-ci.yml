@@ -4,10 +4,10 @@ stages:
   - infrastructure:apply
 
 cache:
-  key: prod
+  key: terraform-cache
   paths:
     - ${TF_ROOT}./terraform
-    
+
 validate infrastructure:
   stage: infrastructure:validate
   image: 
