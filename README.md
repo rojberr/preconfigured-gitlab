@@ -91,3 +91,41 @@ So far this server is only created and doesn't include any ready to go pipelines
 ## Need further support?
 
 Contact me if you need help at rojberr@outlook.com .
+
+## Quick TODO list:
+
+- use Amazon EC2 Spot Instances,
+- adhere to Spot Instances best practices,
+- automate with Kubernetes the deployment, management, and scaling of containers
+
+- setting up the infra / server
+- downloading gitlab or container hosted?
+- installation / first setup
+- unlocking gitlab for the first time (token?)
+- user creation (at least one for each: guest / dev / admin) with roles
+- gitlab master runners setup (one master and create at least one runner)
+  (master - scheduling jobs, communicating and giving instr)
+  (runnej - execute jobs, takes cmds from master)
+- configure global security for runners
+
+- build pipelines (at least one for each project)
+- schedule some nightly / periodic builds
+
+- configure build triggers on git push
+  (webhook and poll scm)
+
+- delegate user database or include LDAP
+
+- configure:
+- set system message
+- set # executors
+- email notifications (use plugin extended e-mail notification)
+- configure smtp (gmail? / docker mailserver)
+-
+- html reports after tests
+
+- add .gitlab-ci.yml to each project
+
+- pipelines to build docker image from dockerfile and upload to dockerhub
+
+- multibranch jobs ?? like in jenkins?
