@@ -1,0 +1,5 @@
+# Usage:
+#
+# > ansible-playbook gitlab-playbook.yml
+#
+- name: gitlab
