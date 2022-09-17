@@ -2,4 +2,10 @@
 #
 # > ansible-playbook gitlab-playbook.yml
 #
-- name: gitlab
+- name: "GitLab general playbook"
+  community.general.gitlab_user:
+    api_url: https://gitlab.example.com/
+    api_token: "{{ access_token }}"
+    validate_certs: False
+    username: myusername
+    state: absent
