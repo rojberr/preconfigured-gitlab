@@ -5,7 +5,7 @@ This repository creates preconfigured GitLab to download Your repos and run thei
 Create your GitLab server only when you need it and destroy it afterwards using simple Terraform commands! 💥
 This will reduce your costs to minimum!
 
-Use my init scripts and adapt them to your environment to quickly recreate a preconfigured GitLab for your own needs! Turn it off and on whenever your want. 😎
+Use my init script and adapt them to your environment to quickly recreate a preconfigured GitLab for your own needs! Turn it on and off whenever your want. 😎
 
 ![Foto von Life Of Pix - Fliessender Zement](./img/readme-cement.jpg)
 
@@ -105,7 +105,7 @@ Contact me if you need help at rojberr@outlook.com .
 - user creation (at least one for each: guest / dev / admin) with roles
 - gitlab master runners setup (one master and create at least one runner)
   (master - scheduling jobs, communicating and giving instr)
-  (runnej - execute jobs, takes cmds from master)
+  (runner - execute jobs, takes cmds from master)
 - configure global security for runners
 
 - build pipelines (at least one for each project)
@@ -126,6 +126,8 @@ Contact me if you need help at rojberr@outlook.com .
 
 - add .gitlab-ci.yml to each project
 
-- pipelines to build docker image from dockerfile and upload to dockerhub
+- pipelines to build docker image from Dockerfile and upload to Dockerhub
 
 - multibranch jobs ?? like in jenkins?
+
+- deploy with AWS marketplace image? and then edit /etc/gitlab/gitlab.rb ? sudo gitlab-ctl reconfigure
